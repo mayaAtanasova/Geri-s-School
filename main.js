@@ -13,9 +13,7 @@ function afterLoading() {
     });
 
     const rotateObserver = new IntersectionObserver(entries => {
-        console.log(entries);
         entries.forEach((entry, i) => {
-            console.log(entry.isIntersecting)
             entry.target.classList.toggle('roll-in', entry.isIntersecting);
             entry.target.style.setProperty('--rotation-angle', `${Math.random() * 8 - 5}` + 'deg');
             entry.target.style.setProperty('transition-delay', 0.2 + 2 * i / 10 + 's');
@@ -68,8 +66,16 @@ function afterLoading() {
 
     const serviceCards = document.querySelectorAll('.service-card');
     const serviceDetails = document.querySelectorAll('.service-details');
+    const tooltipActive = document.querySelector('.tooltip');
+
+    const followMouse = (e) => {
+        tooltipActive.style.top = e.pageX + 'px';
+    }
+
     serviceCards.forEach((card, index) => {
+
         showObserver.observe(card);
+
         card.addEventListener('click', ev => {
             ev.preventDefault();
             serviceCards.forEach((item, ind) => ind === index ? item.classList.toggle('card-selected') : item.classList.remove('card-selected'));
@@ -78,8 +84,29 @@ function afterLoading() {
                     ? detailItem.classList.toggle('details-visible')
                     : detailItem.classList.remove('details-visible');
             })
-        })
+        });
+
+        card.addEventListener('mouseenter', (e) => {
+            const tooltip = document.querySelector('.tooltip');
+            tooltip.classList.add('tooltip-active');
+
+        });
+
+        card.addEventListener('mouseleave', () => {
+            document.querySelector('.tooltip').classList.remove('tooltip-active');
+        });
+
+        card.addEventListener('mousemove', (e) => {
+            const tooltip = document.querySelector('.tooltip');
+            tooltip.style.left = e.pageX + 'px';
+            tooltip.style.top = e.pageY + 'px';
+        });
     });
+
+
+
+
+
 
     /*--------GALLERY------*/
     const pics = document.querySelectorAll('.gallery-img');
@@ -87,6 +114,30 @@ function afterLoading() {
         rotateObserver.observe(pic);
     })
 
+    const openGalleryBtn = document.getElementById('open-gallery-btn');
+    openGalleryBtn.addEventListener('click', () => showGallery());
+
+    const closeGalleryBtn = document.getElementById('gallery-close');
+    closeGalleryBtn.addEventListener('click', () => closeGallery());
+
+    const galleryButtons = document.querySelectorAll("[data-gallery-button]")
+
+    galleryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const offset = button.dataset.galleryButton === "next" ? 1 : -1
+            const slides = button
+                .closest("[data-gallery]")
+                .querySelector("[data-slides]")
+
+            const activeSlide = slides.querySelector("[data-active]");
+            let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+            if (newIndex < 0) newIndex = slides.children.length - 1;
+            if (newIndex >= slides.children.length) newIndex = 0;
+
+            slides.children[newIndex].dataset.active = true;
+            delete activeSlide.dataset.active;
+        })
+    })
 
     /*--------CONTACTS------*/
 
@@ -110,9 +161,40 @@ function initMap() {
     });
 }
 
-function submitForm(ev) {
+function submitForm() {
     const form = document.querySelector(".contact-form");
-    form.submit();
+    let formValid = true;
+    const fields = [...form.children]
+        .filter(field => field.tagName === 'INPUT' || field.tagName === 'TEXTAREA');
+    fields.forEach(field => {
+        if (field.value.trim() === '') {
+            console.log(field.value);
+            field.style.border = '1px solid red';
+            formValid = false;
+        } else {
+            field.style.border = 'none';
+        }
+    });
+    if (!formValid) {
+        document.querySelector('.contacts-alert').classList.add('alert-active');
+        return false;
+    } else {
+        document.querySelector('.contacts-alert').classList.remove('alert-active');
+        form.submit();
+    }
+    console.log(fields);
     form.reset();
     return false;
+}
+
+const showGallery = () => {
+    document.getElementById('gallery-modal').classList.add('gallery-active')
+    const body = document.body;
+    body.style.overflow = 'hidden';
+};
+
+const closeGallery = () => {
+    document.getElementById('gallery-modal').classList.remove('gallery-active')
+    const body = document.body;
+    body.style.overflow = 'unset';
 }

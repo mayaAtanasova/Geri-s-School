@@ -10,6 +10,7 @@
   
   .service-cards {
     padding-top: 2rem;
+
     display: flex;
     gap: 2%;
   }
@@ -60,8 +61,8 @@
     width: 100%;
     transform-origin: bottom;
     transform: translateY(20%) scaleY(0) ;
-    transition: 0.7s ease-in-out;
-    transition-delay: 0.2s;
+    transition: 0.2s ease-in-out;
+    transition-delay: 0s;
 
     text-align: left;
     background-color: #bdd86e;
@@ -75,4 +76,21 @@
   .service-details.details-visible {
     position:static;
     transform: translateY(0) scaleY(1) ;
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2rem;
+    font-size: 0.6rem;
+    z-index: 21;
+    }
+    
+  .tooltip.tooltip-active {
+    display: block;
   }

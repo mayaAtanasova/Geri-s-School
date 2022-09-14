@@ -61,4 +61,15 @@
   resize: none;
 }
 
+.contacts-alert {
+  display: none;
+  color: #e83f5b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.contacts-alert.alert-active {
+  display: block;
+}
+
 

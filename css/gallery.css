@@ -1,3 +1,7 @@
+#gallery {
+position: relative;
+}
+
 .image-holder {
   margin: 2rem auto 4rem auto;
   width: 90%;
@@ -23,8 +27,13 @@
   border: 1px solid rgba(0, 0, 0, 0.5);
 
   opacity: 0;
+  transform-origin: top center;
   transform: rotate(5deg) translateX(-200px);
   transition: all 0.5s ease-in;
+}
+
+.gallery-img:hover {
+    animation: shake 1s ease-in;
 }
 
 .pin {
@@ -38,4 +47,107 @@
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
     width: 15px;
     aspect-ratio: 1/1;
+  }
+
+  @keyframes shake {
+    0% {
+        transform: rotateZ(0);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    40% {
+        transform: rotateZ(-7deg);
+    }
+    60% {
+        transform: rotateZ(5deg);
+    }
+    80% {
+        transform: rotateZ(-3deg);
+    }
+    80% {
+        transform: rotateZ(-2deg);
+    }
+  }
+
+  /*--------MODAL GALLERY-------*/
+
+  .gallery-modal {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0);
+    transition: 0.2s ease-in-out;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  
+.gallery-modal.gallery-active {
+    transform: scale(1);
+  }
+
+  #gallery-close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  #gallery-close:hover,
+  .gallery-btn:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+  }
+
+  .gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    padding: 1rem;
+    font-size: 2rem
+  }
+
+  .gallery-btn.prev{
+    left: 0.5rem;
+  }
+
+  .gallery-btn.next{
+    right:0.5rem;
+  }
+
+  .gallery-modal ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+  }
+
+  .slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    transition: 0.2s opacity ease-in-out;
+    transition-delay: 0.2s;
+  }
+
+  .slide img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position:center;
+  }
+
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
   }
