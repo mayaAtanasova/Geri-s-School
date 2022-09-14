@@ -1,0 +1,41 @@
+.image-holder {
+  margin: 2rem auto 4rem auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btn-holder {
+    width: 100%;
+    text-align: center;
+}
+
+.gallery-img {
+  position: relative;
+  width: 300px;
+  height: 315px;
+  padding: 15px 15px 30px 15px;
+  background-color: white;
+
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  transform: rotate(5deg) translateX(-200px);
+  transition: all 0.5s ease-in;
+}
+
+.pin {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: brown;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+    width: 15px;
+    aspect-ratio: 1/1;
+  }

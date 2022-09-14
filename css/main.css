@@ -1,0 +1,76 @@
+@import "header.css";
+@import "about.css";
+@import "services.css";
+@import "gallery.css";
+@import "contacts.css";
+@import "animations.css";
+
+:root {
+--rotation-angle: 5deg;
+}
+
+body {
+  background-image: url("/assets/bkg.png");
+  background-size:auto;
+  background-repeat: repeat-y;
+}
+
+.wrapper {
+  max-width: 1960px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title h2 {
+  display: inline-block;
+  padding: 0 1rem;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.title h2::after {
+  content: "";
+  background-color: #e83f5b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  transform: translateY(-100%) rotate(-5deg);
+  z-index: -1;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.roll-in {
+  opacity: 1;
+  transform: rotate(var(--rotation-angle)) translateX(0);
+}
+
+.btn {
+  border: none;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background-color: #e83f5b;
+  color: white;
+  padding: 0.5rem;
+}
+
+.btn:hover {
+  background-color: #b1374b;
+  cursor: pointer;
+}
+

@@ -1,0 +1,126 @@
+/*--------ABOUT-------*/
+
+.about-text {
+
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-text_highlights {
+  width: 50%;
+  padding: 1rem;
+  position: relative;
+}
+
+.about-text_highlights h3 {
+  font-size: 2rem;
+  text-align: right;
+  font-weight: 300;
+}
+
+.about_highlights__accents {
+  padding: 0 2rem;
+
+  position: absolute;
+  left: 10%;
+  bottom: -7%;
+  width: 100%;
+
+  display: flex;
+  gap: 10%;
+}
+
+.accent_ball {
+  border-radius: 100%;
+
+  opacity: 0;
+  transform: rotate(90deg) translateX(-200px);
+  transition: all 0.5s ease-in;
+
+  align-self: center;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+.accent_ball p {
+  text-align: center;
+  color: white;
+}
+
+.accent_ball:nth-child(1) {
+  width: 17%;
+  aspect-ratio: 1/1;
+  background-color: #475da7;
+}
+
+.accent_ball:nth-child(1) p span {
+  display: block;
+  font-size: 2.5em;
+}
+
+.accent_ball:nth-child(2) {
+  width: 14%;
+  aspect-ratio: 1/1;
+  background-color: #f8a631;
+}
+
+.accent_ball:nth-child(2) p {
+  font-size: 0.6rem;
+}
+
+.accent_ball:nth-child(2) p span {
+  display: block;
+  font-size: 2em;
+}
+
+.accent_ball:nth-child(3) {
+  width: 10%;
+  aspect-ratio: 1/1;
+  background-color: #70b42c;
+}
+
+.accent_ball:nth-child(3) p {
+  font-size: 0.5rem;
+}
+
+.accent_ball:nth-child(3) p span {
+  display: block;
+  font-size: 1.5em;
+}
+
+.about-text__maintext {
+  width: 50%;
+  padding: 1rem;
+}
+
+.about-panel {
+  margin: 2rem 3rem;
+  padding: 2rem;
+  background-color: #fddca6;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 0 0 #d0ba95;
+
+  transform: scale(0.15);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+
+.about-panel__cards {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.about-panel__card {
+  width: 20%;
+  text-align: center;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.about-panel__card img {
+  margin: 0 auto;
+  height: 70%;
+}

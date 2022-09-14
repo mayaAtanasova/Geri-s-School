@@ -1,0 +1,201 @@
+#red_baloon {
+  transform-origin: bottom center;
+  transform-box: fill-box;
+  animation: cw-wave 3s linear infinite alternate;
+}
+
+#yellow_baloon {
+  transform-origin: bottom center;
+  transform-box: fill-box;
+  animation: cw-wave 3s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#first_boy_hand {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: ccw-wave 3s linear infinite alternate;
+}
+
+#first_boy_head,
+#second_boy_head {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  animation: ccw-wave 1s ease-in infinite alternate;
+}
+
+#eye1, #eye2,
+#eye3, #eye4,
+#eye5, #eye6,
+#eye7, #eye8,
+#eye9, #eye10,
+#eye11, #eye12 {
+    transform-origin: bottom center;
+    transform-box: fill-box;
+    animation: blink 4s linear infinite;
+}
+
+#eye3, #eye4 {
+animation-delay: 1.7s;
+}
+
+#eye5, #eye6 {
+    animation-delay: 2.5s;
+}
+
+#eye7, #eye8 {
+    animation-delay: 0.5s;
+}
+
+#eye9, #eye10 {
+    animation-delay: 3s;
+}
+
+#eye11, #eye12 {
+    animation-delay: 3.5s;
+}
+
+#girl_painting_head,
+#boy_reading_head {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  animation: ccw-wave 1.5s ease-in infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#boy_math {
+  transform-origin: bottom;
+  transform-box: fill-box;
+  animation: ccw-wave 2s linear infinite alternate;
+}
+
+#first_girl_head {
+  transform-origin: bottom center;
+  transform-box: fill-box;
+  animation: ccw-wave 3s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#first_girl_right_hand {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: cw-wave 1.5s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#first_girl_left_hand {
+  transform-origin: top left;
+  transform-box: fill-box;
+  animation: ccw-wave 1.5s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#boy_reading_foot {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: cw-wave 0.5s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#second_boy_writing_hand {
+  transform-origin: top right;
+  transform-box: fill-box;
+  animation: ccw-wave 0.5s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#paintbrush {
+  transform-origin: right;
+  transform-box: fill-box;
+  animation: ccw-wave 0.8s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#boy_math_hand {
+  transform-origin: bottom center;
+  transform-box: fill-box;
+  animation: cw-wave 0.8s linear infinite alternate;
+  animation-delay: 0.5s;
+}
+
+#note1,
+#note2,
+#note3,
+#note4 {
+  animation: song 1s linear infinite;
+}
+
+#note2,
+#note4 {
+  animation-delay: 0.4s;
+}
+
+#note3 {
+  animation-delay: 0.8s;
+}
+
+#sun_rays {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: sunshine 3s linear infinite alternate;
+}
+
+@keyframes cw-wave {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(10deg);
+  }
+}
+
+@keyframes ccw-wave {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(-3deg);
+  }
+}
+
+@keyframes wobble {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(-2deg);
+  }
+}
+
+@keyframes song {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes sunshine {
+  from {
+    transform: rotateZ(0);
+    scale: 1;
+  }
+  to {
+    transform: rotateZ(-10deg);
+    scale: 1.1;
+  }
+}
+
+@keyframes blink {
+  97% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}

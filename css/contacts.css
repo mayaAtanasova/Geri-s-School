@@ -1,0 +1,64 @@
+/*------------CONTACTS---------------*/
+
+#contacts {
+    padding: 0 3rem;
+}
+
+#services .title h2:after {
+  transform: rotate(2deg);
+}
+
+.contacts-panel {
+  background-color: #ceeafa;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 0 0 #b2c9d7;
+  padding: 2rem;
+
+  transform: scale(0.15);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.contacts-panel img {
+  align-self: center;
+}
+
+#map {
+  width: 50%;
+  /* aspect-ratio: 1/1; */
+  background-color: white;
+}
+
+.contact-details {
+    width: 50%;
+}
+
+.contacts-location,
+.contacts-phone {
+  width: 100%;
+
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  resize: none;
+}
+
+
