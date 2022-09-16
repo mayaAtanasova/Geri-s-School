@@ -146,6 +146,7 @@ position: relative;
     height: 100%;
     transition: 0.2s opacity ease-in-out;
     transition-delay: 0.2s;
+    z-index: 1;
   }
 
   .slide img {
@@ -171,3 +172,10 @@ position: relative;
      min-width: 30%;
     }
   }
+
+@media (max-width: 900px) {
+
+  .slide img {
+    width: 100%;
+  }
+}

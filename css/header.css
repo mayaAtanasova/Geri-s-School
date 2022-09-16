@@ -190,7 +190,7 @@ body.loaded #hero ul li:nth-child(4) {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #hero svg {
     display: none;
   }
