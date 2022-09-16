@@ -80,9 +80,19 @@ function afterLoading() {
             ev.preventDefault();
             serviceCards.forEach((item, ind) => ind === index ? item.classList.toggle('card-selected') : item.classList.remove('card-selected'));
             serviceDetails.forEach((detailItem, detailIndex) => {
-                detailIndex === index
-                    ? detailItem.classList.toggle('details-visible')
-                    : detailItem.classList.remove('details-visible');
+                if (detailIndex === index) {
+                    detailItem.classList.toggle('details-visible');
+                    const flexDirection = window
+                        .getComputedStyle(document.querySelector('.service-cards'))
+                        .getPropertyValue('flex-direction');
+                    if (flexDirection === 'column') {
+                        detailItem.style.order = 0;
+                        detailItem.style.marginBottom = '1rem';
+                    }
+                } else {
+                    detailItem.classList.remove('details-visible');
+                }
+
             })
         });
 

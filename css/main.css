@@ -10,14 +10,18 @@
 }
 
 body {
+  background-color: #fef9ef;
   background-image: url("/assets/bkg.png");
   background-size:auto;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
 .wrapper {
   max-width: 1960px;
   margin: 0 auto;
+}
+section {
+  padding: 0 25px;
 }
 
 .title {
@@ -72,5 +76,11 @@ section {
 .btn:hover {
   background-color: #b1374b;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  section {
+    padding: 5px;
+  }
 }
 

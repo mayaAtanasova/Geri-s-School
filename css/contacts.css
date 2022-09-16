@@ -72,4 +72,31 @@
   display: block;
 }
 
+@media (max-width: 1200px) {
+  .contacts-panel {
+    flex-direction: column-reverse;
+  }
 
+  .contact-details {
+    width: 100%;
+}
+
+  #map {
+    width: 100%;
+    height: 100%;
+    position: static;
+    overflow: unset;
+  }
+}
+
+@media (max-width: 900px) {
+  #contacts {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .contacts-panel {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

@@ -1,7 +1,6 @@
 /*--------ABOUT-------*/
 
 .about-text {
-
   display: flex;
   justify-content: flex-start;
 }
@@ -125,3 +124,59 @@
   height: 70%;
 }
 
+@media (max-width: 1300px) {
+  .accent_ball:nth-child(1) p span {
+    font-size: 1.5em;
+  }
+
+.about_highlights__accents {
+  height: 50%;
+}
+.accent_ball:nth-child(1){
+  width: 40%;
+}
+
+.accent_ball:nth-child(2){
+  width: 30%;
+}
+
+.accent_ball:nth-child(3){
+  width: 20%;
+}
+
+}
+
+@media (max-width: 900px) {
+  .about-text {
+    flex-direction: column;
+    width: 100%;
+  }
+
+.about-text_highlights,
+.about-text__maintext {
+  width: 100%;
+}
+
+.about-text_highlights h3 {
+  text-align: center;
+}
+
+.about_highlights__accents {
+display: none;
+}
+
+.about-panel {
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.about-panel__cards {
+  flex-wrap: wrap;
+}
+
+.about-panel__card {
+  width: 100%;
+}
+
+}

@@ -9,3 +9,9 @@ html {
 h1, h2, h3, h4, h5, h6, a {
     font-family: "Neucha", cursive;
 }
+
+@media (max-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+}

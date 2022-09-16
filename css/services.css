@@ -9,14 +9,17 @@
   }
   
   .service-cards {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
 
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 2%;
   }
+
   
   .service-card {
-    width: 32%;
+    flex: 0 1 32%;
     padding: 2rem 3rem;
     text-align: center;
     background-color: #bdd86e;
@@ -25,7 +28,7 @@
 
     transform: scale(0.15);
     opacity: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
   }
 
@@ -49,33 +52,25 @@
     margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
   }
-
-  .service-details-container {
-    position:relative;
-  }
   
   .service-details {
-    position:absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    transform-origin: bottom;
-    transform: translateY(20%) scaleY(0) ;
-    transition: 0.2s ease-in-out;
-    transition-delay: 0s;
-
+    height: 0;
+    transform: translateY(-100%) scale(0) ;
+    transition: 0.5s ease-in-out;
     text-align: left;
     background-color: #bdd86e;
     border-radius: 0 0 1rem 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin: 0;
     z-index: -1;
+
+    order: 2;
 
   }
   
   .service-details.details-visible {
-    position:static;
-    transform: translateY(0) scaleY(1) ;
+    height: 100%;
+    width: 100%;
+    transform: translateY(0) scale(1) ;
   }
 
   .tooltip {
@@ -93,4 +88,14 @@
     
   .tooltip.tooltip-active {
     display: block;
+  }
+
+  @media (max-width: 900px) {
+    .service-cards {
+      flex-direction: column;
+    }
+
+    .service-card {
+      width: 100%;
+    }
   }
