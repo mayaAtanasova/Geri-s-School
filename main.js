@@ -68,10 +68,6 @@ function afterLoading() {
     const serviceDetails = document.querySelectorAll('.service-details');
     const tooltipActive = document.querySelector('.tooltip');
 
-    const followMouse = (e) => {
-        tooltipActive.style.top = e.pageX + 'px';
-    }
-
     serviceCards.forEach((card, index) => {
 
         showObserver.observe(card);

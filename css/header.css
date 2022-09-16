@@ -181,7 +181,7 @@ body.loaded #hero ul li:nth-child(4) {
   }
 
   #hero ul li {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 
   #hero svg {
@@ -190,15 +190,16 @@ body.loaded #hero ul li:nth-child(4) {
   }
 }
 
-
-
 @media (max-width: 600px) {
-  body {
-    font-size: 14px;
+  #hero svg {
+    display: none;
+  }
+
+  #hero nav .menu ul {
+    flex-direction: column;
   }
 
   #hero ul li {
-    font-size: 0.5rem;
+    font-size: 2.5rem;
   }
-
 }
