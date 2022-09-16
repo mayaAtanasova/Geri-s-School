@@ -95,7 +95,7 @@ position: relative;
     line-height: 0.5;
     border-radius: 0.5rem;
     top: 1rem;
-    right: 2rem;
+    right: calc(5% + 1rem);
     font-size: 3rem;
     color: rgba(255, 255, 255, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
@@ -124,11 +124,11 @@ position: relative;
   }
 
   .gallery-btn.prev{
-    left: 0.5rem;
+    left: 5%;
   }
 
   .gallery-btn.next{
-    right:0.5rem;
+    right:5%;
   }
 
   .gallery-modal ul {
@@ -151,7 +151,8 @@ position: relative;
   .slide img {
     display: block;
     height: 100%;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     object-fit: cover;
     object-position:center;
   }

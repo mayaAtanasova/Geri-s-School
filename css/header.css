@@ -195,7 +195,7 @@ body.loaded #hero ul li:nth-child(4) {
     display: none;
   }
 
-  #hero nav .menu ul {
+  #hero .accent-text {
     flex-direction: column;
   }
 
